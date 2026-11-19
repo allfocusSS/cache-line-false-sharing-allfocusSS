@@ -1,0 +1,288 @@
+{
+  "specification": "Cache Line & False Sharing Mechanics in Multi-Core Python, Sufyan bin Uzayr",
+  "generated_at_utc": "2026-11-19T08:05:53.438270+00:00",
+  "execution_mode": "full",
+  "required_iterations_per_thread": 60000000,
+  "required_threads": 4,
+  "system_context": {
+    "git_username": "allfocusSS",
+    "cpu_model": "Apple M2",
+    "cpu_signature": "arm64::Apple M2::8",
+    "architecture": "arm64",
+    "operating_system": "macOS-27.2-arm64-arm-64bit-Mach-O",
+    "hostname": "MacBook-Air-Zaksylyk.local",
+    "logical_cores": 8,
+    "physical_cores": 8,
+    "cache_line_size_bytes": 128,
+    "instance_seed": 4157513189213029819,
+    "instance_seed_hex": "0x39b27437d80b45bb",
+    "affinity_api_supported": false,
+    "affinity_core_candidates": [],
+    "python_version": "3.13.0",
+    "numpy_version": "2.4.6",
+    "numba_version": "0.65.1"
+  },
+  "benchmark": {
+    "threads": 4,
+    "iterations_per_thread": 60000000,
+    "layouts": [
+      {
+        "layout": "stride_1",
+        "stride_elements": 1,
+        "stride_bytes": 8,
+        "iterations_per_thread": 60000000,
+        "total_updates": 240000000,
+        "elapsed_ns": 131300750,
+        "ns_per_update": 0.5470864583333334,
+        "context_switch_delta": {
+          "voluntary": 0,
+          "involuntary": 9
+        },
+        "buffer_address_alignment_bytes": 128,
+        "slots": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "relative_cache_line_ids": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "distinct_cache_lines": 1,
+        "observed_counter_values": [
+          150000000,
+          510000000,
+          450000000,
+          210000000
+        ],
+        "expected_counter_values": [
+          150000000,
+          510000000,
+          450000000,
+          210000000
+        ],
+        "parity_passed": true,
+        "thread_affinity_masks": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "affinity_pinned": false
+      },
+      {
+        "layout": "stride_4",
+        "stride_elements": 4,
+        "stride_bytes": 32,
+        "iterations_per_thread": 60000000,
+        "total_updates": 240000000,
+        "elapsed_ns": 129930500,
+        "ns_per_update": 0.5413770833333333,
+        "context_switch_delta": {
+          "voluntary": 0,
+          "involuntary": 49
+        },
+        "buffer_address_alignment_bytes": 128,
+        "slots": [
+          0,
+          4,
+          8,
+          12
+        ],
+        "relative_cache_line_ids": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "distinct_cache_lines": 1,
+        "observed_counter_values": [
+          150000000,
+          510000000,
+          450000000,
+          210000000
+        ],
+        "expected_counter_values": [
+          150000000,
+          510000000,
+          450000000,
+          210000000
+        ],
+        "parity_passed": true,
+        "thread_affinity_masks": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "affinity_pinned": false
+      },
+      {
+        "layout": "stride_8",
+        "stride_elements": 8,
+        "stride_bytes": 64,
+        "iterations_per_thread": 60000000,
+        "total_updates": 240000000,
+        "elapsed_ns": 127643750,
+        "ns_per_update": 0.5318489583333333,
+        "context_switch_delta": {
+          "voluntary": 0,
+          "involuntary": 39
+        },
+        "buffer_address_alignment_bytes": 128,
+        "slots": [
+          0,
+          8,
+          16,
+          24
+        ],
+        "relative_cache_line_ids": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "distinct_cache_lines": 2,
+        "observed_counter_values": [
+          150000000,
+          510000000,
+          450000000,
+          210000000
+        ],
+        "expected_counter_values": [
+          150000000,
+          510000000,
+          450000000,
+          210000000
+        ],
+        "parity_passed": true,
+        "thread_affinity_masks": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "affinity_pinned": false
+      },
+      {
+        "layout": "stride_16",
+        "stride_elements": 16,
+        "stride_bytes": 128,
+        "iterations_per_thread": 60000000,
+        "total_updates": 240000000,
+        "elapsed_ns": 126492375,
+        "ns_per_update": 0.5270515625,
+        "context_switch_delta": {
+          "voluntary": 0,
+          "involuntary": 49
+        },
+        "buffer_address_alignment_bytes": 128,
+        "slots": [
+          0,
+          16,
+          32,
+          48
+        ],
+        "relative_cache_line_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "distinct_cache_lines": 4,
+        "observed_counter_values": [
+          150000000,
+          510000000,
+          450000000,
+          210000000
+        ],
+        "expected_counter_values": [
+          150000000,
+          510000000,
+          450000000,
+          210000000
+        ],
+        "parity_passed": true,
+        "thread_affinity_masks": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "affinity_pinned": false
+      },
+      {
+        "layout": "private",
+        "stride_elements": 8,
+        "stride_bytes": 64,
+        "iterations_per_thread": 60000000,
+        "total_updates": 240000000,
+        "elapsed_ns": 9806208,
+        "ns_per_update": 0.0408592,
+        "context_switch_delta": {
+          "voluntary": 0,
+          "involuntary": 12
+        },
+        "buffer_address_alignment_bytes": 128,
+        "slots": [
+          0,
+          8,
+          16,
+          24
+        ],
+        "relative_cache_line_ids": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "distinct_cache_lines": 2,
+        "observed_counter_values": [
+          150000000,
+          510000000,
+          450000000,
+          210000000
+        ],
+        "expected_counter_values": [
+          150000000,
+          510000000,
+          450000000,
+          210000000
+        ],
+        "parity_passed": true,
+        "thread_affinity_masks": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "affinity_pinned": false
+      }
+    ],
+    "ratios": {
+      "stride_1_over_stride_8": 1.0286500514126231,
+      "stride_8_over_stride_16": 1.009102327314196,
+      "stride_1_over_private": 13.389553841811228,
+      "stride_8_over_private": 13.016626814360862
+    }
+  },
+  "llvm_audit": {
+    "parity_across_all_five_layouts": true,
+    "native_numba_nopython_signatures": 1,
+    "llvm_volatile_i64_store_sites": 1,
+    "llvm_volatile_i64_load_sites": 1,
+    "llvm_volatile_store_example": "store volatile i64 %.204, ptr %sunkaddr2, align 8",
+    "llvm_volatile_load_example": "%counter_previous = load volatile i64, ptr %sunkaddr2, align 8",
+    "private_single_final_i64_store": "store i64 %local_counter.2.0.lcssa, ptr %.217, align 8",
+    "private_final_i64_store_sites": 1,
+    "native_function_definition": "define noundef range(i32 -1, -2) i32 @_ZN8__main__25worker_strided_accumulateB2v1B40c8tJTIeFIjxB2IKSgI4CrvQClQZ6FcpCShpgEU0AE5ArrayIyLi1E1C7mutable7alignedExxy(ptr noalias nocapture writeonly %retptr, ptr noalias nocapture readnone %excinfo, ptr nocapture readnone %arg.buffer.0, ptr nocapture readnone %arg.buffer.1, i64 %arg.buffer.2, i64 %arg.buffer.3, ptr %arg.buffer.4, i64 %arg.buffer.5.0, i64 %arg.buffer.6.0, i64 %arg.slot, i64 %arg.iters, i64 %arg.thread_seed) local_unnamed_addr #0 {",
+    "cpython_wrapper_note": "inspect_llvm includes a CPython entry wrapper; the benchmark loop is a nopython nogil native function.",
+    "llvm_verified": true
+  },
+  "verification_passed": true,
+  "provenance_warning": "Measurements are valid ONLY for the host recorded under system_context. Re-run on your own Mac before submission.",
+  "interpretation_note": "Cache-line count is computed using measured host line size. On 128-byte lines, stride=8 may still share physical lines. Volatile loads/stores are proven in LLVM; the register-private baseline can be optimized by LLVM."
+}
